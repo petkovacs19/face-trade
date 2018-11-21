@@ -1,0 +1,30 @@
+
+  .panel-cell {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    justify-content: center;
+    position: relative;
+  }
+  .controller-panels button {
+    background: none;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+  }
+
+  .thumb-box-inner {
+    border: 1px solid #585858;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 66px;
+  }
+  .thumb {
+    height: 64px;
+  }
