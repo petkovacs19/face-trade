@@ -70,8 +70,14 @@
           <div class="card-body" style="height:64px;width:64px;margin-top:40px;margin-bottom:40px;">
             <canvas class="thumb" id="thumb-5"></canvas>          
           </div>
+
+          <button type="button" type="button"  class="btn btn-info col-lg-2" (click)="train()" mat-raised-button color="primary">Train model</button>
+          <button (click)="predict()" type="button" class="btn btn-danger col-lg-2">{{!isPredicting ? 'Start trading' : 'Stop trading'}}</button>
+    
         
-            
+          <div>Loss {{loss}}</div>
+
+          Last shot action: {{lastAction}}
     </div>
   </div>
 
