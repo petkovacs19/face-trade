@@ -25,6 +25,9 @@ export class DashboardComponent implements OnInit {
   isPredicting = false;
   actions = ['BUY', 'SELL'];
   lastAction = '';
+  usd = 500;
+  gbp = 500;
+  transactionCounter = 0;
 
   counters: Map<Number, any> = new Map<Number, any>();
 
@@ -173,14 +176,8 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  // predict(){
-  //   console.log("Start predicting");
-  //   this.forexQuoteService.getForexQuote(["USDEUR"]).subscribe(
-  //     result => console.log(result[0]['symbol'])
-  //   );
-  // }
-
   placeTrade(predictedClass: number) {
+    this.transactionCounter +=1;
     this.lastAction = this.actions[predictedClass];
   }
 
@@ -206,6 +203,7 @@ export class DashboardComponent implements OnInit {
       this.placeTrade(classId);
       predictedClass.dispose();
       await tf.nextFrame();
+      await this.delay(1000);
     }
   }
 
@@ -246,4 +244,8 @@ export class DashboardComponent implements OnInit {
       ]
     });
   }
+
+  async delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}
 }

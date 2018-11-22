@@ -2,83 +2,103 @@
   <div class="row">
     <div class="col-sm-6 col-lg-3">
       <div class="card" style="height:224px;width:224px">
-              <ack-webcam
-                [(ref)]   = "webcam"
-                [options] = "{width:224, height:224}"
-                (success) = "onCamSuccess($event)"
-                (catch)   = "onCamError($event)"></ack-webcam>
+        <ack-webcam [(ref)]="webcam" [options]="{width:224, height:224}" (success)="onCamSuccess($event)" (catch)="onCamError($event)"></ack-webcam>
       </div>
-    </div><!--/.col-->
+    </div>
+    <!--/.col-->
     <div class="col-sm-12 col-lg-4">
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label">Learning rate</label>
-            <input type="text" class="form-control col-lg-2" id="lr" [(ngModel)]="learningRate">
-        </div>
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label">Batch size factor</label>
-            <input type="text" class="form-control col-lg-2" id="batchSizeFraction" [(ngModel)]="batchSizeFraction">
-        </div>
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label">Epochs</label>
-            <input type="text" class="form-control col-lg-2" id="epochs" [(ngModel)]="epochs">
-        </div>
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label">Hidden units</label>
-            <input type="text" class="form-control col-lg-2" id="hiddenUnits" [(ngModel)]="hiddenUnits">
-        </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-md-3 col-form-label">Learning rate</label>
+        <input type="text" class="form-control col-lg-2" id="lr" [(ngModel)]="learningRate">
       </div>
-    
-  </div><!--/.row-->
-  
+      <div class="form-group row">
+        <label class="col-sm-3 col-md-3 col-form-label">Batch size factor</label>
+        <input type="text" class="form-control col-lg-2" id="batchSizeFraction" [(ngModel)]="batchSizeFraction">
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-md-3 col-form-label">Epochs</label>
+        <input type="text" class="form-control col-lg-2" id="epochs" [(ngModel)]="epochs">
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-md-3 col-form-label">Hidden units</label>
+        <input type="text" class="form-control col-lg-2" id="hiddenUnits" [(ngModel)]="hiddenUnits">
+      </div>
+    </div>
+
+  </div>
+  <!--/.row-->
+
   <!--/.card-->
   <div class="row">
     <div class="card col-sm-12 col-lg-10">
-        <div class="card-body">
-          <div class="chart-wrapper" style="height:320px;margin-top:40px;">
-            <canvas baseChart class="chart"
-            [datasets]="mainChartData"
-            [labels]="mainChartLabels"
-            [options]="mainChartOptions"
-            [colors]="mainChartColours"
-            [legend]="mainChartLegend"
-            [chartType]="mainChartType"></canvas>
-          </div>
+      <div class="card-body">
+        <div class="chart-wrapper" style="height:320px;margin-top:40px;">
+          <canvas baseChart class="chart" [datasets]="mainChartData" [labels]="mainChartLabels" [options]="mainChartOptions"
+            [colors]="mainChartColours" [legend]="mainChartLegend" [chartType]="mainChartType"></canvas>
         </div>
-  </div>
+      </div>
+    </div>
     <div class="col-sm-6 col-lg-2" style="height:340px;">
       <div class="col-sm-12 col-lg-12 brand-card">
-            <div class="card-body" style="height:64px;width:64px;margin-top:40px;margin-bottom:40px;">
-              <canvas class="thumb" id="thumb-0"></canvas>
-              
-            </div>
-                <button type="button" class="btn btn-success" id="left" (mousedown)="mouseDown(0)" (mouseup)="mouseUp($event)">Add Buy Sample</button>
-              <span id="left-total">{{counters.get(0)}} examples</span> 
-              
+        <div class="card-body" style="height:64px;width:64px;margin-top:40px;margin-bottom:40px;">
+          <canvas class="thumb" id="thumb-0"></canvas>
+
+        </div>
+        <button type="button" class="btn btn-success" id="left" (mousedown)="mouseDown(0)" (mouseup)="mouseUp($event)">Add
+          Buy Sample</button>
+        <span id="left-total">{{counters.get(0)}} examples</span>
+
       </div>
       <div class="col-sm-12 col-lg-12 brand-card">
-          <div class="card-body" style="height:64px;width:64px;margin-top:20px;margin-bottom:40px;">
-            <canvas class="thumb" id="thumb-1"></canvas>
-            
-          </div>
-          <button type="button" class="btn btn-warning " id="left" (mousedown)="mouseDown(1)" (mouseup)="mouseUp($event)">Add Sell Sample</button>
-              <span id="left-total">{{counters.get(1)}} examples</span> 
+        <div class="card-body" style="height:64px;width:64px;margin-top:20px;margin-bottom:40px;">
+          <canvas class="thumb" id="thumb-1"></canvas>
+
+        </div>
+        <button type="button" class="btn btn-warning " id="left" (mousedown)="mouseDown(1)" (mouseup)="mouseUp($event)">Add
+          Sell Sample</button>
+        <span id="left-total">{{counters.get(1)}} examples</span>
       </div>
-    </div><!--/.col-->
-  </div><!--/.row-->
-  <div class="row" >
-      <div class="col-sm-12 col-lg-12 brand-card">
-          <div class="card-body" style="height:64px;width:64px;margin-top:40px;margin-bottom:40px;">
-            <canvas class="thumb" id="thumb-5"></canvas>          
-          </div>
-
-          <button type="button" type="button"  class="btn btn-info col-lg-2" (click)="train()" mat-raised-button color="primary">Train model</button>
-          <button (click)="predict()" type="button" class="btn btn-danger col-lg-2">{{!isPredicting ? 'Start trading' : 'Stop trading'}}</button>
-    
-        
-          <div>Loss {{loss}}</div>
-
-          Last shot action: {{lastAction}}
     </div>
+    <!--/.col-->
+  </div>
+  <!--/.row-->
+
+  <div class="row">
+      <div class="col-sm-12 col-lg-4">
+          <div class="form-group row">
+            <label class="col-sm-5 col-md-5 col-form-label">Starting GBP</label>
+            <input type="text" class="form-control col-lg-2" id="lr" [(ngModel)]="gbp">
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-5 col-md-5 col-form-label">Starting USD</label>
+            <input type="text" class="form-control col-lg-2" id="batchSizeFraction" [(ngModel)]="usd">
+          </div>
+          <div class="form-group row">
+              <label class="col-sm-5 col-md-5 col-form-label">Number of transactions</label>
+              {{transactionCounter}}
+            </div>
+        </div>
+  </div>
+
+  <div class="row">
+      <div class="col-lg-1 col-sm-1">
+          <button type="button" type="button" class="btn btn-info btn-sm" (click)="train()" mat-raised-button color="primary">Train
+              model</button>
+      </div>
+      <div class="col-lg-2 col-sm-5">Loss: {{loss}}
+      </div>
+      <div class="col-lg-1 col-sm-1">
+          <button (click)="predict()" type="button" class="btn btn-danger btn-sm">{{!isPredicting ? 'Start trading' :
+              'Stop trading'}}</button>
+      </div>  
+      <div class="col-lg-2 col-sm-2">Last action: {{lastAction}}
+      </div>
+      <div class="col-lg-1">
+          <canvas class="thumb" id="thumb-5"></canvas>
+       </div>
   </div>
 
 </div>
+
+
+
