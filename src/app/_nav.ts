@@ -1,7 +1,7 @@
 export const navItems = [
   {
-    name: 'Dashboard',
-    url: '/dashboard',
+    name: 'Face Trading',
+    url: '/trade',
     icon: 'icon-speedometer'
   }
 ];

@@ -8,7 +8,7 @@ import { DefaultLayoutComponent } from './containers';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'trade',
     pathMatch: 'full',
   },
   {
@@ -19,7 +19,7 @@ export const routes: Routes = [
     },
     children: [
       {
-        path: 'dashboard',
+        path: 'trade',
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       }
     ]

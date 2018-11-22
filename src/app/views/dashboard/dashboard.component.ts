@@ -203,7 +203,6 @@ export class DashboardComponent implements OnInit {
       this.placeTrade(classId);
       predictedClass.dispose();
       await tf.nextFrame();
-      await this.delay(1000);
     }
   }
 
@@ -247,5 +246,7 @@ export class DashboardComponent implements OnInit {
 
   async delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );
-}
+  }
+
+  
 }
