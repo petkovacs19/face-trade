@@ -44,6 +44,7 @@ ng serve
 ## Authors
 
 * **Peter Kovacs** - *Initial work*
+* **Art Begolli** - *Everything related to charts*
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
