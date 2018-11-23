@@ -10,7 +10,7 @@ export class ForexQuoteService {
 
   pairs = ['GBPUSD']
   API_URL = 'https://forex.1forge.com/1.0.3/quotes'
-  API_KEY = 'INSERT_YOUR_API_KEY_HERE'
+  API_KEY = 'xsusNPtSRHWMayc7cUIHamgVh9WeTCRh'
 
   constructor(private httpClient: HttpClient) {
     if(this.API_KEY === 'INSERT_YOUR_API_KEY_HERE'){
