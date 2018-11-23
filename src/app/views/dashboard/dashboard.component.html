@@ -31,17 +31,7 @@
   <!--/.card-->
   <div class="row">
     <div class="card col-sm-12 col-lg-10">
-      <div class="card-body">
-        <div class="chart-wrapper" style="height:320px;margin-top:40px;">
-          <canvas baseChart class="chart" 
-          [datasets]="mainChartData" 
-          [labels]="mainChartLabels" 
-          [options]="mainChartOptions"
-          [colors]="mainChartColours"
-          [legend]="mainChartLegend" 
-          [chartType]="mainChartType"></canvas>
-        </div>
-      </div>
+      <app-chart></app-chart>
     </div>
     <div class="col-sm-6 col-lg-2" style="height:340px;">
       <div class="col-sm-12 col-lg-12 brand-card">

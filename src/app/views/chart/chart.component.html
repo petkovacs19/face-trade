@@ -1,0 +1,7 @@
+<div class="card-body">
+  <div class="chart-wrapper" style="height:320px;margin-top:40px;">
+    <chart [options]="options"
+    (load)="saveInstance($event.context)" 
+    style="height: 315px; width: 85%"></chart>
+  </div>
+</div>

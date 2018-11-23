@@ -9,18 +9,26 @@ import { WebCamModule } from 'ack-angular-webcam';
 import { ControllerDataset } from '../../models/controller-dataset';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { ChartComponent } from '../chart/chart.component';
+
+import { ChartModule } from '@rijine/ngx-highcharts';
+
+declare var require: any
+
+
 @NgModule({
   imports: [
     FormsModule,
     DashboardRoutingModule,
-    ChartsModule,
+    // ChartsModule,
     BsDropdownModule,
     ButtonsModule.forRoot(),
     WebCamModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartModule.forRoot(require('highcharts'))
   ],
-  declarations: [ DashboardComponent ],
+  declarations: [ DashboardComponent, ChartComponent],
   providers: [ControllerDataset]
 })
 export class DashboardModule { }
