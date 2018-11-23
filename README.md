@@ -1,5 +1,4 @@
 # Trade with your face
-A repo for my workshop at Junction 2018, Helsinki
 
 Use your face as a controller for trading the market. With this simple web application, you can train a neural network in the browser using the webcam as input and market instructions as an output. Check it out, add some training samples, train your network and you are ready to trade.
 
@@ -23,6 +22,17 @@ npm install
 ```
 
 This will install all the packages specified in the package.json file in the project directory.
+
+## Set your API key
+
+Sign up for an API-KEY at https://forex.1forge.com. This will give you free 1000 requests per day.
+Add your API-KEY in in app/services/forex-quote.service.ts.
+
+```
+  pairs = ['GBPUSD', 'EURUSD', 'GBPEUR']
+  API_URL = 'https://forex.1forge.com/1.0.3/quotes'
+  API_KEY = 'INSERT_YOUR_API_KEY_HERE'
+```
 
 
 ## Start the application
