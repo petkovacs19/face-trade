@@ -13,7 +13,7 @@ export class ForexQuoteService {
   API_KEY = 'INSERT_YOUR_API_KEY_HERE'
 
   constructor(private httpClient: HttpClient) {
-    if(this.API_KEY == 'INSERT_YOUR_API_KEY_HERE'){
+    if(this.API_KEY === 'INSERT_YOUR_API_KEY_HERE'){
         console.error('UPDATE YOUR API KEY');
     }
   }
