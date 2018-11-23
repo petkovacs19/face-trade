@@ -8,12 +8,14 @@ import { Observable, of } from 'rxjs';
 })
 export class ForexQuoteService {
 
-  pairs = ['GBPUSD', 'EURUSD', 'GBPEUR'];
-  API_URL = 'https://forex.1forge.com/1.0.3/quotes';
-  API_KEY = 'x8CthmwHn96NdZMiUTF9SRrCIM1hGyNV';
+  pairs = ['GBPUSD']
+  API_URL = 'https://forex.1forge.com/1.0.3/quotes'
+  API_KEY = 'INSERT_YOUR_API_KEY_HERE'
 
   constructor(private httpClient: HttpClient) {
-
+    if(this.API_KEY === 'INSERT_YOUR_API_KEY_HERE'){
+        console.error('UPDATE YOUR API KEY');
+    }
   }
 
 
