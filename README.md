@@ -2,6 +2,8 @@
 
 Use your face as a controller for trading the market. With this simple web application, you can train a neural network in the browser using the webcam as input and market instructions as an output. Check it out, add some training samples, train your network and you are ready to trade.
 
+![Demo](https://raw.githubusercontent.com/petkovacs19/face-trade/master/src/assets/img/demo.png)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
