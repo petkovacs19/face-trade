@@ -23,12 +23,12 @@ export class ChartComponent implements OnInit {
       series: [
         {
           name: "BID",
-          color: "#69995D",
+          color: "#4DBD74",
           data: []
         },
         {
           name: "ASK",
-          color: "#F15156",
+          color: "#F86C6B",
           data: []
         }
       ],

@@ -8,8 +8,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You need to node in order install dependencies and run the app on your machine.
-Go to this [link](https://nodejs.org/en/download/) and install it on your hardware.
+You need [node](https://nodejs.org/en/download/) in order install dependencies and run the app on your machine.
+Go to the link and install it on your hardware.
 
 
 ### Installing
@@ -26,7 +26,7 @@ This will install all the packages specified in the package.json file in the pro
 ## Set your API key
 
 Sign up for an API-KEY at https://forex.1forge.com. This will give you free 1000 requests per day.
-Add your API-KEY in in app/services/forex-quote.service.ts.
+Add your API-KEY in in [forex-quote.service.ts](https://github.com/petkovacs19/face-trade/blob/master/src/app/services/forex-quote.service.ts)
 
 ```
   pairs = ['GBPUSD', 'EURUSD', 'GBPEUR']
