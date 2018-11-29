@@ -1,7 +1,7 @@
 # Trade with your face
 
-Use your face as a controller for trading the market. With this simple Angular web application, you can train a neural network in the browser using the webcam as input and market instructions as an output. Check it out, add some training samples, train your network and you are ready to trade.
-
+Use your face as a controller for trading the market. With this simple Angular web application, you can train a neural network in the browser using the webcam as input and market instructions as an output. Check it out, add some training samples, train your network and you are ready to trade. 
+In the example below, buy/sell means you will buy/sell the quote currency in this case USD.
 ![Demo](https://raw.githubusercontent.com/petkovacs19/face-trade/master/src/assets/img/demo.png)
 
 ## Getting Started
