@@ -47,7 +47,7 @@ ng serve
 
 * **Peter Kovacs** - *Initial work*
 * **Art Begolli** - *Everything related to charts*
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/petkovacs19/face-trade/graphs/contributors) who participated in this project.
 
 ## License
 
